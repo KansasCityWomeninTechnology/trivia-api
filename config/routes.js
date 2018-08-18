@@ -24,9 +24,9 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'pages/homepage'
-  },
+  // '/': {
+  //   view: 'pages/homepage'
+  // },
 
   /***************************************************************************
   *                                                                          *
@@ -44,6 +44,11 @@ module.exports.routes = {
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
 
+  'get /api': 'QuizController.cheer',
+  'get /api/sample': 'QuizController.sample', 
+  'get /api/category/:category': 'QuizController.category',
+  'get /api/category/:category/difficulty/:difficulty': 'QuizController.difficulty',
+  'get /api/category/:category/difficulty/:difficulty/count/:count': 'QuizController.count'
 
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
