@@ -8,7 +8,7 @@ import { Answer, Question } from '../models/trivia.dto';
 
 @Injectable()
 export class ValidateQuestionPipe implements PipeTransform {
-  transform(value: Question, metadata: ArgumentMetadata) {
+  transform(value: Question, metadata?: ArgumentMetadata) {
     if (!value?.text || !value?.answers) {
       throw new BadRequestException(
         'text property and answers array property are required',

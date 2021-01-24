@@ -5,7 +5,7 @@ import { isNil } from '@nestjs/common/utils/shared.utils';
 export class ParseQueryPipe<T> implements PipeTransform<T, T[]> {
   constructor(private readonly enumType: T) {}
 
-  transform(value: unknown, metadata: ArgumentMetadata): T[] {
+  transform(value: unknown, metadata?: ArgumentMetadata): T[] {
     if (isNil(value)) return [];
 
     const enumValues = Object.values(this.enumType);

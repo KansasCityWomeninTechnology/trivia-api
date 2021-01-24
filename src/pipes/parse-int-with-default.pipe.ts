@@ -6,7 +6,7 @@ export class ParseIntWithDefaultPipe<T = string, R = number>
   implements PipeTransform<T, R> {
   constructor(private readonly defaultValue: R) {}
 
-  transform(value: T, metadata: ArgumentMetadata): R {
+  transform(value: T, metadata?: ArgumentMetadata): R {
     if (isNil(value) || typeof value !== 'string') {
       return this.defaultValue;
     }
