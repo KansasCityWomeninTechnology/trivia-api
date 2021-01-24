@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+- '12'
+branches:
+  only:
+  - deploy
+install:
+- npm install -g @nestjs/cli
+script:
+- npm ci
+- npm run build
+deploy:
+  provider: heroku
+  api_key:
+    secure: pbxOp6OCAkPy6NbC57QnMo2+pcbYNT9zhZFERW2NRPA2jeUEg0DYjSm0Oy4u20FMwdBu8Oj8bWm7pECZUHsqYhWxDMOeW4MqKWngYZsySgwV6g7nli7auU5nZmA04cBVChBwT1B7KJD+PlVCfjnMwRJTf+fhDC1vDthjn3hnjlZlN4UBfXTmSoNJqpwtGftfZf1xgyxWg8Vc1k7fb3FpGK/bCA8zblhYJ6b7qVTNs91SMeO6BANTbSB+QOhaIPx4LrnlkVNgjfQJU/hVcM7S50d0X0lVup5NvFrkNXyF+n2Z2sFGYyVNz6RETw2yJJaEILIGqO7nEKqMcid+b8XGYXvD6+xMQZ1yabGTlRVVBcF2l0W1z0fS/qx1d7hUQJCvzrNl9dcRd9i8f97lEwDmKKSyF/YsfDpozy3bjPFfRkYLgitdHE8HwP4xJDuBIVonFpe3UHvxtPmNMd8eltYSQd8LPnCFjTerbAB2ZL5IN+hLd9xE4t9YWtjUj/NIeuC409BejQTNuuwrxjyydy+0a7xO5lZqW4333+5HGtOLd0qhIbZZXEbm7CVq9VdhWo/nz2cnH/xTJEQIUpOhYn3iLuqzrS6tLwo087Xk1MHS3/d9NUVH6eauFAAD0mDMaTHD2v/EE07xFRybMbkl4OduoVgQ7cKZCj3mlDWSh3yZSzk=
+  app: cnc-trivia-api
+  on: deploy
+  skip_cleanup: true
+  overwrite: true
+  file_glob: true
+  file: dist/*

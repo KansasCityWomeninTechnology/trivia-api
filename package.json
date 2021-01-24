@@ -2,9 +2,12 @@
   "name": "trivia-api",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "Kansas City Women in Technology",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.18"
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
