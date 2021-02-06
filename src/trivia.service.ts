@@ -20,8 +20,8 @@ export class TriviaService {
     );
   }
 
-  public getCuratedTriviaQuestions(): Observable<Questions> {
-    return of(CURATED_QUESTIONS);
+  public getCuratedTriviaQuestions(): Observable<Question[]> {
+    return of(CURATED_QUESTIONS.questions);
   }
 
   public getCuratedTriviaQuestion(
