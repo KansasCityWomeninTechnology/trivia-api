@@ -32,9 +32,9 @@ export class SampleController {
   @Get()
   @ApiOkResponse({
     description: 'Curated list of trivia questions',
-    type: Questions,
+    type: [Question],
   })
-  public sampleQuiz(): Observable<Questions> {
+  public sampleQuiz(): Observable<Question[]> {
     return this.triviaService.getCuratedTriviaQuestions();
   }
 
